@@ -1,13 +1,26 @@
-import { getProducts } from "@/app/lib/products";
 import { NextResponse } from "next/server";
 
+import { getProducts } from "@/app/lib/products";
+
 export async function GET() {
-  const products = await getProducts();
+  try {
+    const products = await getProducts();
 
-  const stockData = products?.map((p) => ({
-    title: p.title,
-    stock: p.stock,
-  }));
+    // Map only stock-related fields
+    const stockData = products?.map((p) => ({
+      title: p.title,
+      stock: p.stock,
+    }));
 
-  return NextResponse.json({ stockLevels: stockData });
+    // success logging
+    console.log(`[GET /api/stock-levels] Returned ${stockData?.length} stocks`);
+
+    return NextResponse.json({ stockLevels: stockData });
+  } catch (error) {
+    console.error("Error fetching stock levels:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch stock levels" },
+      { status: 500 }
+    );
+  }
 }
