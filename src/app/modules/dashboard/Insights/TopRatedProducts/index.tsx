@@ -21,22 +21,18 @@ interface TopRatedProductsProps {
 
 const TopRatedProducts = ({ topRated }: TopRatedProductsProps) => {
   return (
-    <Box sx={{ p: 2 }}>
+    <Box sx={{ p: { xs: 0, sm: 2 } }}>
       <Box
         sx={{
           position: "relative",
           bgcolor: "grey.50",
           borderRadius: 2,
-          p: 3,
+          p: { xs: 0, sm: 3 },
           boxShadow: "inset 0 2px 8px rgba(0,0,0,0.05)",
         }}
       >
         <ResponsiveContainer width="100%" height={500}>
-          <BarChart
-            data={topRated}
-            layout="vertical"
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-          >
+          <BarChart data={topRated} layout="vertical">
             <defs>
               {topRated.map((entry, index) => (
                 <linearGradient

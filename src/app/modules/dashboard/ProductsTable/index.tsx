@@ -90,24 +90,23 @@ const ProductsTable = () => {
     {
       field: "id",
       headerName: "ID",
-      flex: 1,
       headerAlign: "center",
       align: "center",
-      maxWidth: 50,
+      width: 60,
     },
     {
       field: "title",
       headerAlign: "center",
       headerName: "Title",
       flex: 1,
-      minWidth: 200,
+      minWidth: 250,
     },
     {
       field: "category",
       headerAlign: "center",
       headerName: "Category",
       align: "center",
-
+      minWidth: 150,
       flex: 1,
     },
     {
@@ -116,6 +115,7 @@ const ProductsTable = () => {
       headerName: "Price",
       align: "center",
       type: "number",
+      minWidth: 150,
       flex: 1,
     },
     {
@@ -124,6 +124,7 @@ const ProductsTable = () => {
       headerName: "Rating",
       align: "center",
       type: "number",
+      minWidth: 150,
       flex: 1,
     },
     {
@@ -132,6 +133,7 @@ const ProductsTable = () => {
       headerName: "Availability",
       align: "center",
       type: "number",
+      minWidth: 150,
       flex: 1,
       renderCell: (params: GridRenderCellParams) => {
         const value = params.value;
@@ -148,6 +150,7 @@ const ProductsTable = () => {
       field: "thumbnail",
       headerName: "Image",
       headerAlign: "center",
+      minWidth: 120,
       flex: 1,
       renderCell: (params) => (
         <Box
@@ -183,6 +186,7 @@ const ProductsTable = () => {
       sortable: false,
       filterable: false,
       headerAlign: "center",
+      minWidth: 120,
       align: "center",
       renderCell: (params: GridRenderCellParams<Product>) => (
         <IconButton onClick={() => handleOpenModal(params.row)}>
