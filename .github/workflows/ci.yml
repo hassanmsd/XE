@@ -1,0 +1,36 @@
+name: Frontend CI
+
+# Trigger workflow on push or pull request to main or develop
+on:
+  push:
+    branches: [master, develop]
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2️⃣ Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20 # Use your project's Node version
+          cache: npm
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 4️⃣ Run frontend tests
+      - name: Run tests
+        run: npm test
+
+      # 5️⃣ Build Next.js project
+      - name: Build project
+        run: npm run build
