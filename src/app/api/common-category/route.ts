@@ -18,7 +18,7 @@ export async function GET() {
       .sort((a, b) => b.value - a.value);
 
     // success logging
-    console.log(
+    console.info(
       `[GET /api/common-category] Returned ${commonCategories?.length} categories`
     );
 

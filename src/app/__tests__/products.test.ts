@@ -13,7 +13,7 @@ describe("GET /api/products", () => {
   beforeEach(() => {
     // Reset mocks and silence console
     jest.clearAllMocks();
-    console.log = jest.fn();
+    console.info = jest.fn();
     console.error = jest.fn();
   });
 

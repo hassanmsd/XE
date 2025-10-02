@@ -11,7 +11,7 @@ export async function GET() {
     const avg = total / (products?.length || 0);
 
     // success logging
-    console.log(`[GET /api/average-price] Returned ${avg} average price`);
+    console.info(`[GET /api/average-price] Returned ${avg} average price`);
 
     return NextResponse.json({ averagePrice: avg.toFixed(2) });
   } catch (error) {

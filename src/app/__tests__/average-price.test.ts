@@ -13,7 +13,7 @@ describe("GET /api/average-price", () => {
   beforeEach(() => {
     // Reset mocks and silence console
     jest.clearAllMocks();
-    console.log = jest.fn();
+    console.info = jest.fn();
     console.error = jest.fn();
   });
 
@@ -27,7 +27,7 @@ describe("GET /api/average-price", () => {
 
     // Assert: Average of 10 and 20 is 15.00
     expect(data).toEqual({ averagePrice: "15.00" });
-    expect(console.log).toHaveBeenCalledWith(
+    expect(console.info).toHaveBeenCalledWith(
       "[GET /api/average-price] Returned 15 average price"
     );
   });

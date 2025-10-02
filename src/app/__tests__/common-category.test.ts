@@ -13,7 +13,7 @@ describe("GET /api/common-category", () => {
   beforeEach(() => {
     // Reset mocks and silence console
     jest.clearAllMocks();
-    console.log = jest.fn();
+    console.info = jest.fn();
     console.error = jest.fn();
   });
 
@@ -36,7 +36,7 @@ describe("GET /api/common-category", () => {
       { name: "Electronics", value: 3 },
       { name: "Clothing", value: 1 },
     ]);
-    expect(console.log).toHaveBeenCalledWith(
+    expect(console.info).toHaveBeenCalledWith(
       "[GET /api/common-category] Returned 2 categories"
     );
   });

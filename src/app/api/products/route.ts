@@ -30,7 +30,7 @@ export async function GET(req: Request) {
     }));
 
     // success logging
-    console.log(`[GET /api/products] Returned ${result?.length} products`);
+    console.info(`[GET /api/products] Returned ${result?.length} products`);
 
     return NextResponse.json({
       offset,

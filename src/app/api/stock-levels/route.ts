@@ -13,7 +13,9 @@ export async function GET() {
     }));
 
     // success logging
-    console.log(`[GET /api/stock-levels] Returned ${stockData?.length} stocks`);
+    console.info(
+      `[GET /api/stock-levels] Returned ${stockData?.length} stocks`
+    );
 
     return NextResponse.json({ stockLevels: stockData });
   } catch (error) {

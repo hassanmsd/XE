@@ -14,7 +14,7 @@ describe("GET /api/top-rated", () => {
   beforeEach(() => {
     // Reset mocks and silence console
     jest.clearAllMocks();
-    console.log = jest.fn();
+    console.info = jest.fn();
     console.error = jest.fn();
   });
 
@@ -32,7 +32,7 @@ describe("GET /api/top-rated", () => {
         { title: "Product 2", rating: "4.00" }, // review rating: 4
       ],
     });
-    expect(console.log).toHaveBeenCalledWith(
+    expect(console.info).toHaveBeenCalledWith(
       "[GET /api/top-rated] Returned 2 top10"
     );
   });

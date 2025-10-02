@@ -13,7 +13,7 @@ describe("GET /api/stock-levels", () => {
   beforeEach(() => {
     // Reset mocks and silence console
     jest.clearAllMocks();
-    console.log = jest.fn();
+    console.info = jest.fn();
     console.error = jest.fn();
   });
 
@@ -30,7 +30,7 @@ describe("GET /api/stock-levels", () => {
       { title: "Product 1", stock: 20 },
       { title: "Product 2", stock: 15 },
     ]);
-    expect(console.log).toHaveBeenCalledWith(
+    expect(console.info).toHaveBeenCalledWith(
       "[GET /api/stock-levels] Returned 2 stocks"
     );
   });

@@ -29,7 +29,7 @@ export async function GET() {
       }));
 
     // success logging
-    console.log(`[GET /api/top-rated] Returned ${top10?.length} top10`);
+    console.info(`[GET /api/top-rated] Returned ${top10?.length} top10`);
 
     return NextResponse.json({ topRated: top10 });
   } catch (error) {
